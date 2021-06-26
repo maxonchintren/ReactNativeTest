@@ -13,7 +13,7 @@ const AppRouter = () => {
         initialRouteName="List"
         screenOptions={{ headerShown: false }}
       >
-        <Stack.Screen name="List" component={List} />
+        <Stack.Screen name="List" component={List}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

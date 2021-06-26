@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
       marginBottom: 20
     },
     title: {
-      color: palette['text-main'],
+      color: palette['text-accent'],
       fontSize: 35,
       fontWeight: '500'
     },

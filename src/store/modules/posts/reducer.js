@@ -1,10 +1,11 @@
 import { createReducer } from '@reduxjs/toolkit'
 import { SUCCESS, FAILURE, REQUEST } from '../../constants/statuses'
-import { SET_POST, SET_POSTS } from './constants'
+import { SET_POST, SET_POSTS, SET_POST_COMMENTS } from './constants'
 
 const initialState = {
   posts: [],
   selectedPost: null,
+  selectedPostComments: [],
   isLoadingPosts: false,
   isLoadingSelectedPost: false,
   paging: {
@@ -49,5 +50,9 @@ export const postsReducer = createReducer(initialState, {
   [SET_POST[FAILURE]]: (state) => {
     state.selectedPost = null
     state.isLoadingSelectedPost = false
+  },
+
+  [SET_POST_COMMENTS[SUCCESS]]: (state, action) => {
+    state.selectedPostComments = action.payload.data
   }
 })
